@@ -16,7 +16,7 @@ import argparse
 torch.manual_seed(42)
 
 tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen-VL-Chat", trust_remote_code=True)
-model = AutoModelForCausalLM.from_pretrained("Qwen/Qwen-VL-Chat", device_map="cuda:1", trust_remote_code=True).eval()
+model = AutoModelForCausalLM.from_pretrained("Qwen/Qwen-VL-Chat", device_map="cuda:0", trust_remote_code=True).eval()
 model.requires_grad_(False)
 model.generation_config = GenerationConfig.from_pretrained("Qwen/Qwen-VL-Chat", trust_remote_code=True)
 to_pil = ToPILImage()

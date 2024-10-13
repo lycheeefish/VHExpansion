@@ -15,7 +15,7 @@ import contextlib
 from torch.cuda.amp import autocast
 import argparse
 
-device = torch.device("cuda:1")
+device = torch.device("cuda:0")
 model, vis_processors, _ = load_model_and_preprocess(name="blip2_vicuna_instruct", model_type="vicuna7b", is_eval=True, device=device)
 model.requires_grad_(False)
 to_pil = ToPILImage()
