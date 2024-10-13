@@ -43,16 +43,17 @@ To prepare each of the multimodal large language models (MLLMs), please refer to
 - [**InstructBLIP**](https://github.com/salesforce/LAVIS/tree/main/projects/instructblip)
 
 - [**LLaVA-1.5**](https://github.com/haotian-liu/LLaVA)
+  
   In addition to the official instructions, make the following modifications:
-
+  
   1. Add the following line below [this line](https://github.com/haotian-liu/LLaVA/blob/c121f0432da27facab705978f83c4ada465e46fd/llava/model/language_model/llava_llama.py#L44):
-
+  
      ```python
      config.mm_vision_tower = "openai/clip-vit-large-patch14"
      ```
-
+  
   2. Comment out the `@torch.no_grad()` decorator at [this line](https://github.com/haotian-liu/LLaVA/blob/c121f0432da27facab705978f83c4ada465e46fd/llava/model/multimodal_encoder/clip_encoder.py#L45).
-
+  
 - [**Qwen-VL-Chat**](https://github.com/QwenLM/Qwen-VL)
 
   In addition to the official instructions, modify the following:
